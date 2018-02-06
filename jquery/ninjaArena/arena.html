@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="arena.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.playerPicker').hide();
+        $('button').hover(function(){
+            $('body>div').css('background-image','url('+$(this).attr('imgsrc')+')');
+        });
+        $('button').click(function(){
+            $('body>div').css('background-image','url('+$(this).attr('imgsrc')+')');
+            $('.arenaPicker').hide();
+            $('.playerPicker').show();
+    });
+    $('#player1').change(function(){
+        //alert($('select option:selected').val());
+        $('.player1 img').attr('src',$('#player1 option:selected').val());
+    })
+    $('#player2').change(function(){
+        //alert($('select option:selected').val());
+        $('.player2 img').attr('src',$('#player2 option:selected').val());
+    })
+});
+</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="arenaPicker menu">
+            <h3>Select Arena</h3>
+            <button imgsrc="dojo_arena_photos/beach.jpg">Beach</button>
+            <button imgsrc="dojo_arena_photos/earth.jpg">Planet</button>
+            <button imgsrc="dojo_arena_photos/dojo.jpg">dojo</button>
+            <button imgsrc="dojo_arena_photos/forest.jpg">forest</button>
+            <button imgsrc="dojo_arena_photos/matrix.jpg">matrix</button>
+            <button imgsrc="dojo_arena_photos/snow.jpg">snow</button>
+        </div>
+        <div class="playerPicker menu">
+            <h3>Select Players</h3>
+            <select id="player1">
+                <option value="#">Select Ninja</option>
+                <option value="dojo_arena_photos/leo.png">Leonardo</option>
+                <option value="dojo_arena_photos/donny.png">Donny</option>
+                <option value="dojo_arena_photos/raphael.png">Raphael</option>
+                <option value="dojo_arena_photos/mikey.png">Mikey</option>
+            </select>
+            <select id="player2">
+                <option value="#">Select Ninja</option>
+                <option value="dojo_arena_photos/leo.png">Leonardo</option>
+                <option value="dojo_arena_photos/donny.png">Donny</option>
+                <option value="dojo_arena_photos/raphael.png">Raphael</option>
+                <option value="dojo_arena_photos/mikey.png">Mikey</option>
+            </select>
+        </div>
+        <div class="player1"><img src="#"></div>
+        <div class="player2"><img src="#"></div>
+    </div>   

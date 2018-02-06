@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	Welcome, {{request.session.user.name}} 
+	<form action="/addBookReview" method="GET">
+	<input type="submit" value="Add Book and Review">
+	</form>
+	<form action="/logout" method="GET">
+	<input type="submit" value="Logout">
+	</form>
+</head>
+<body>
+<h1> Recent Book Reviews </h1>
+		{% if reviews|length > 0%}
+		{% for rev in reviews %}
+			<h3> {{rev.book_id.title}} by {{rev.book_id.author.name}}</h3>
+			<p> {{rev.rating}} Stars </p>
+			<p> {{rev.user_id.name}} says: {{rev.review_text}} </p>
+			<p> Posted at {{rev.created_at}} </p>
+			{% if rev.user_id.id == request.session.id %}
+			<form action="/delRev/{{rev.id}}" method="POST">
+			{% csrf_token %} 
+			<input type="submit" value="delete review">
+			</form>
+			{% endif %}
+		{% endfor%}
+		{% endif %}
+<h1> All Books With Reviews </h1>
+		{% if books|length > 0%}
+		{% for book in books %}
+		<form action="/showBook/{{book.id}}" method="GET">
+		<input type="submit" value={{book.title}}>
+		</form>
+		{% endfor%}
+		{% endif %}
+</body>
+</html>

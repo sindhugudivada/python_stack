@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Registration Form</title>
+    <style>
+            body {
+                    background-color:plum;
+            } 
+            .linking{
+                text-align: right;
+            }
+    </style>
+             
+</head>
+<body >
+    <div class="col-md-5">
+    </div>
+    <div class="container col-md-4">   
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        <div class="linking">
+        <a href="/books">Home</a> <a href="/logout">Logout</a></div>
+        <h2>Add a New Book Title and a Review </h2>
+        <form action='/addBook' method='post'>
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="title">Book Tiltle:</label>
+            <input type='text' class="form-control" name='title'>
+            </div>
+            <div class="form-group">
+            <label for="author">Author:</label><b><br>
+            <p>Choose from the list:
+            <select name='list'>
+                <option selected value="Stephen King">Stephen King</option>
+                <option value="J K Rowling">J K Rowling</option>
+                <option value="Jane Austen">Jane Austen</option>
+                <option value="George Orwell ">George Orwell </option>
+                <option value="William Golding">William Golding</option>
+                <option value="Kurt Vonnegut ">Kurt Vonnegut </option>
+                <option value="Homer">Homer</option>
+            </select></p>   
+            </div>
+            <div class="form-group">
+            <label for="author">Or add a new author:</label>
+            <input type='text' class="form-control" name='author'>
+            </div>
+            <div class="form-group">
+            <label for="comment">Review:</label>
+            <textarea class="form-control" rows="5" name="comment"></textarea>
+            </div>
+            <div class="form-group">
+            <p>Choose from the list:
+            <select name='stars'>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select></p>
+            </div>
+            <input type='submit' class="btn btn-default" value='Add Book and Review'>
+        </form>       
+    </div>  
+</body>
+</html>

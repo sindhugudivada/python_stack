@@ -1,0 +1,55 @@
+body{
+}
+body>div{
+    border:5px solid grey;
+    background-color:black;
+    width:800px;
+    height:600px;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+.menu {
+    border:5px solid grey;
+    border-radius:5px;
+    background-color:silver;
+    margin:10px auto;
+    height:120px;
+    width:300px;
+    margin-top:100px;
+    background-color:rgba(255,255,255,0.7);
+    text-align:center;
+}
+h3{
+    color:yellow;
+    text-align: center;
+    text-shadow:2px 2px white;
+}
+button{
+    display:inline-block;
+    width:25%;
+    border-radius:2px;
+    margin:2px;
+    background-color:white;
+}
+.player1{
+    display: inline-block;
+    height:200px;
+    position:relative;
+    width:100px;
+    margin:50px;
+   margin-left:100px;
+}
+.player1 img{
+    height:100%;
+}
+.player2{
+    display: inline-block;
+    height:200px;
+    position:relative;
+    width:100px;
+    margin:50px;
+    margin-left:300px;
+}
+.player2 img{
+    height:100%;
+}

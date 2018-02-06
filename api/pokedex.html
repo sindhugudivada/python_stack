@@ -1,0 +1,43 @@
+<html>
+   <head>
+       <title>The Codingdojo ColorClicker!</title>
+       <link rel="stylesheet" type="text/css" href="/Users/vineely/Desktop/coding dojo/api/pokedex.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script type="text/javascript">
+        $(document).ready(function(){
+          for (var i = 0; i <15; i++) {
+            $('.pokemon').append(`<img value=${i} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png">`)   
+        }
+            $(document).on('click','img',function(){ 
+                var id=$(this).attr('value');
+                $.get('https://pokeapi.co/api/v2/pokemon/' + id, function(res) {
+                    console.log(res);
+                    var html_str = "";
+                    html_str += `<div id="img"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png" id="${id}"></div>`;
+                    html_str += "<h4>Name: " + res.name + "</h4>";
+                    html_str += "<h4>Height:</h4>";
+                    html_str += res.height;
+                    html_str += "<h4>Weight:</h4>";
+                    html_str += res.weight;
+                    html_str += "<h4>Types</h4>";
+                    html_str += "<ul>";
+                    for (var j = 0; j < res.types.length; j++) {
+                        html_str += "<li>" + res['types'][j]['name'] + "</li>";
+                    }
+                    html_str += "</ul>";
+                    $('.pokedex').html(html_str);},"json");
+                    $('.pokedox').append('html_str');
+            })
+    
+        })
+      </script>
+   </head>
+   <body>
+       <div class="pokemon">
+
+       </div>
+       <div class="pokedex">
+
+       </div>
+   </body>
+</html>

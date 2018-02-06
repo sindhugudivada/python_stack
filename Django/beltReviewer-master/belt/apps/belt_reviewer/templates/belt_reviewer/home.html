@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/Users/vineely/Desktop/python_stack/Django/belt/apps/belt_reviewer/static/style.css">    
+    
+</head>
+<body>
+    <div class "container">
+        <div class="welcome">
+            <div class="left">
+                
+            </div>
+            <div class="right">
+                <a href="/add">Add Book and Review</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="welcome"></div>
+            <div class="left">
+                <p>Recent Book Reviews:</p>
+                <div class="list-group">
+                    {% for review in latest %}
+                        <h5>Title: <a href="/title/{{review.book.id}}">{{review.book.title}}</a></h5>
+                        <p>Posted on {{review.created_at}}</p>                    
+                        <h5 >Rating: {{review.rating}} stars</h5>
+                        <p >{{review.reviewer.name}} says: {{review.comment}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="right">
+                <p>Other Books:</p>
+                {% for review in rest %}
+                <h5>Title: {{review.book.title}}</a></h5>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

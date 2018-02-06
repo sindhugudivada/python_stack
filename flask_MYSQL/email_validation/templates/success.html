@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>emails entered</title>
+        </head>
+            <body>
+                <h1>Email Addresses Entered:</h1>
+                <table>
+                    {% for email in emails: %}
+                    <tr>
+                        <td>{{email['emails']}}</td>
+                        <td>{{email['created_at']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </body>
+    </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="/Users/vineely/Desktop/coding dojo/jquery/users/users.css">
+    <p>
+        <h1>Table</h1>
+    </p> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>   
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+				$('.add-row').click(function() {
+					$('table').append('<tr><td>' + $('input[name="first_name"]').val() + '</td><td>'
+						+ $('input[name="last_name"]').val() + '</td><td>'
+						+ $('input[name="email"]').val() + '</td><td>'
+						+ $('input[name="phone_number"]').val() + '</td></tr>');
+
+        });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="Firstname" placeholder="FirstName" name="first_name">
+        <input type="text" id="Lastname" placeholder="LastName" name="last_name">
+        <input type="text" id="email" placeholder="Email Address" name="email">
+        <input type="text" id="contactnumber" placeholder="contact number" name="phone_number">
+        <input type="button" class="add-row" value="Add Row">
+    </form>
+    <table>
+        <tr>
+          <td>First name</td>
+          <td>Last name</td>
+          <td>Email address</td>
+          <td>Contact number</td>
+        </tr>
+    </table>    
+</body>
+</html>
+

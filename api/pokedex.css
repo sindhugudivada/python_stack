@@ -1,0 +1,12 @@
+.pokedex{
+    border:10px solid red;
+    display: inline-block;
+    width:200px;
+    height:400px;
+}
+.pokemon{
+    display: inline-block;
+    width: 900px;
+    vertical-align: top;
+    margin-top: 50px;
+}

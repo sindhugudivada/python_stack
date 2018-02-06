@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <p><h1>Ninja To Cat</h1></p>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+			$('img').click(function(){
+				$(this).attr('temp', $(this).attr('src'));
+				$(this).attr('src', $(this).attr('alt'));
+				$(this).attr('alt', $(this).attr('temp'));
+});
+    });
+    </script>
+</head>
+<body>
+        <img src="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/cat0.png" alt="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/ninja0.png">  
+        <img src="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/cat1.png" alt="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/ninja1.png">  
+        <img src="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/cat2.png" alt="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/ninja2.png">  
+        <img src="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/cat3.png" alt="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/ninja3.png">  
+        <img src="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/cat4.png" alt="/Users/vineely/Desktop/coding dojo/jquery/ninja to cat/img/ninja4.png">  
+</body>
+</html>
+

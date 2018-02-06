@@ -1,0 +1,31 @@
+*{margin: 5px;
+    padding: 0px;
+}
+.container{
+    width: 950px;
+    background-color:#46373E;
+    padding:0px;  
+}
+.left{
+    text-align: left;
+    font-family: Comic Sans MS;
+    display: inline-block;
+    padding-left: 10px;
+    width:50px;
+}
+.right{
+    float: right;
+    display: inline-block;
+    padding-right: 200px;
+    padding-top: 10px;
+}
+#other{
+    float: right;
+    display: inline-block;
+    padding-right: 200px;
+    padding-top: 10px;
+}
+.left1{
+    border-bottom: 4px solid black;
+    width:400px;
+}

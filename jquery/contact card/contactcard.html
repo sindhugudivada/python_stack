@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <p>
+        <h1>Contact Card</h1>
+    </p>
+    <link rel="stylesheet" type="text/css" href="/Users/vineely/Desktop/coding dojo/jquery/contact card/contactcard.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('.add-row').click(function (){
+                var temp1 = $('#Firstname').val();
+                var temp2 = $('#Lastname').val();
+                var temp3 = $('textarea[name="Description"]').val();
+                $('#contact_card').append("<div class='abc'><p>"+temp1+" "+temp2+"</p><p id="back"> "+temp3+"</p></div>");
+            
+            });
+            $(document).on('click','.abc',function(){           
+            $(this).children().toggle();
+        });
+        });     
+
+
+    </script>
+</head>
+
+<body>
+    First name:
+    <input type="text" id="Firstname" placeholder="FirstName" name="first_name">
+    <br> Lastname:
+    <input type="text" id="Lastname" placeholder="LastName" name="last_name">
+    <br> Description:
+    <textarea placeholder="Enter description" name="Description"></textarea>
+    <br>
+    <input type="button" class="add-row" value="Add User">
+</body>
+<div id="contact_card">
+
+</div>
+
+
+</html>

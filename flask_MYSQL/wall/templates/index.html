@@ -1,0 +1,42 @@
+<html>
+    <head>
+      <title>Login and Registration</title>
+      <style>
+      .error {
+        border: 1px solid black;
+        color: red;
+      }
+      </style>
+    </head>
+    <body>
+      <h3>Existing User Login</h3>
+      <form id ="login" action='/login' method='POST'>
+        <input id="login_email" type="text" name="email" placeholder="Email Address">
+        <br>
+        <input id="login_password" type="password" name="password" placeholder="Password">
+        <br>
+        <input id="login" type="submit" value="Login">
+      </form>
+      <h3>Register as a New User</h3>
+      <form id ="register" action='/register' method='POST'>
+        <input id="first_name" type="text" name="first_name" placeholder="First Name">
+        <br>
+        <input id="last_name" type="text" name="last_name" placeholder="Last Name">
+        <br>
+        <input id="email" type="text" name="email" placeholder="Email Address">
+        <br>
+        <input id="password" type="password" name="password" placeholder="Enter Password">
+        <br>
+        <input id="confirm_password" type="password" name="confirm_password" placeholder="Re-Enter Password">
+        <br>
+        <input id="register" type="submit" value="Register">
+      </form>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p class="error">{{message}}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </body>
+    </html>

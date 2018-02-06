@@ -1,0 +1,23 @@
+input{
+    margin-bottom:30px;
+}
+textarea{
+    height:30px;
+    width:200px;
+    vertical-align: top;
+    padding:0px 20px 20px 0px;
+}
+
+div{
+    color:black;
+    background-color: white:
+}
+
+.abc{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin-right: 100px;
+    padding: 30px;
+    display: inline-block;
+}

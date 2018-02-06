@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/Users/vineely/Desktop/python_stack/Django/belt/apps/belt_reviewer/static/style.css">    
+    
+</head>
+<body>
+    <div class "container">
+        <div class="welcome">
+            <div class="left">
+              
+            </div>
+            <div class="right">
+                <a href="/books">Home</a>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+        <p>Author:{{book.id}}</p>
+        <div class="welcome"></div>
+            <div class="left1">
+                <p>Reviews:</p>
+                {% for review in all_reviews %}
+                <h5>Rating: {{review.rating}}</h5>
+                <p><a href="/users/{{review.reviewer.id}}">{{review.reviewer.name}}</a> says: {{review.comment}}</p>
+                 Posted on {{review.created_at}}
+                {% if request.session.user_id == review.reviewer.id %}
+                <a href="/destroy/{{review.id}}">Delete this Review</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div id="middle">
+            <div id="book">
+            </div>
+            <div id="other">
+                <p>Add a Review:</p>
+                <form action='/addReview/{{book.id}}' method='post'>
+                    {% csrf_token %}
+                    Review:<input type="text" name="comment">
+                    Rating:
+                    <select name='stars'>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    stars.
+                    <input type='submit' value='Submit Review'/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <p><h1>Disappearing Ninja</h1></p>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('button').click(function(){
+            $(this).siblings().children().children().text('Michael Choi was here!')
+        });     
+    });
+
+    </script>
+</head>
+<body>
+    <div>
+        <button>Click me for crazy things!</button>
+        <ul>
+            <li><h3>Tiger Woods</h3></li>
+            <li><h3>Phil Mickelson</h3></li>
+            <li><h3>Ben Hogan</h3></li>
+            <li><h3>Jack Nicklaus</h3></li>
+            <li><h3>Gary Player</h3></li>
+            <li><h3>Rory Mcilroy</h3></li>
+        </ul>
+     </div>
+</body>
+</html>
